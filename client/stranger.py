@@ -98,16 +98,16 @@ def record(msg):
 
 
 def listen_on_console(prompt):
-    while (True):
+    while True:
         try:
             msg = raw_input(prompt)
             display(msg)
-        except KeyboardInterrupt:
+        except KeyboardInterrupt:  # this doesn't actually work btw, just use pkill to exit
             sys.exit()
 
 
 def listen_on_client():
-    while (True):
+    while True:
         msgs = stranger_client.get_messages()
         for msg in msgs:
             print msg
@@ -120,5 +120,3 @@ t0 = Thread(target=listen_on_console, args=("",))
 t1 = Thread(target=listen_on_client, args=())
 t0.start()
 t1.start()
-
-# listen_on_client()
