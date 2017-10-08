@@ -1,0 +1,46 @@
+---
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "Stranger Things Wall"
+host: "virtserver.swaggerhub.com"
+basePath: "/stranger_wall/1.0.0"
+schemes:
+- "https"
+- "http"
+paths:
+  /display:
+    post:
+      tags:
+      - "default"
+      summary: "Display message on stranger things board"
+      operationId: "controllers.default_controller.display"
+      consumes:
+      - "multipart/form-data"
+      parameters:
+      - name: "message"
+        in: "formData"
+        description: "message to display"
+        required: true
+        type: "string"
+      responses:
+        204:
+          description: "Message recieved"
+        400:
+          description: "Invalid input"
+  /messages:
+    post:
+      tags:
+      - "default"
+      summary: "Poll for new messages, clear list"
+      operationId: "controllers.default_controller.messages"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "JSON array of messages"
+          schema:
+            type: "string"
+            example: ""
+definitions: {}
