@@ -103,11 +103,10 @@ def record(msg):
 
 def listen_on_console(prompt):
     while True:
-        try:
-            msg = raw_input(prompt)
-            display(msg)
-        except KeyboardInterrupt:
+        msg = raw_input(prompt)
+        if msg == "\\exit":
             sys.exit()
+        display(msg)
 
 
 def listen_on_client():
@@ -130,6 +129,7 @@ def clear_errors():
     while True:
         if not displaying:
             set_all((0, 0, 0))
+            strip.show()
         time.sleep(2)
 
 t0 = Thread(target=listen_on_console, args=("",))
