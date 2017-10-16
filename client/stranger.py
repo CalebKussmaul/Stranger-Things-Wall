@@ -3,7 +3,7 @@ from datetime import datetime
 import colorsys
 import random
 from threading import Thread
-import sys
+import os
 
 import stranger_client
 
@@ -105,7 +105,7 @@ def listen_on_console(prompt):
     while True:
         msg = raw_input(prompt)
         if msg == "\\exit":
-            sys.exit()
+            os._exit(1)
         display(msg)
 
 
