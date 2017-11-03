@@ -6,10 +6,11 @@
 </head>
 <body style="text-align: center">
     <p>Enter message to be displayed on Caleb's wall</p>
-    <form action="http://[your IP]:8080/stranger_wall/1.0.0/display" method="POST">
-        <textarea name="message" rows="4" cols="50"></textarea><br>
+    <form action="http://[your IP]:8080/stranger_wall/1.0.0/display" method="POST" onsubmit="this.submit(); this.reset(); return false;">
+        <textarea id="msg" name="message" rows="3" cols="40" maxlength="50"></textarea><br>
         <input type="submit" value="submit">
     </form>
+    <br>
     <p><a href="https://github.com/CalebKussmaul/Stranger-Things-Wall">project source code</a></p>
 </body>
 </html>
