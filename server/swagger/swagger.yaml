@@ -34,6 +34,14 @@ paths:
       - "default"
       summary: "Poll for new messages, clear list"
       operationId: "controllers.default_controller.messages"
+      consumes:
+      - "multipart/form-data"
+      parameters:
+      - name: "password"
+        in: "formData"
+        description: "password for message list"
+        required: true
+        type: "string"
       produces:
       - "application/json"
       parameters: []

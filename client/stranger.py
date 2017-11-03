@@ -4,6 +4,7 @@ import colorsys
 import random
 from threading import Thread
 import os
+import re
 
 import stranger_client
 
@@ -118,7 +119,8 @@ def listen_on_client():
                 for msg in msgs:
                     print msg
                     record(msg)
-                    display(msg[:50])
+                    if not re.search(r"([a-zA-Z])\1+", msg):
+                        display(msg[:50])
             except:
                 print "network error"
         time.sleep(2)

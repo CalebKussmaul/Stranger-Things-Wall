@@ -12,6 +12,7 @@ def get_messages():
         method="POST",
         url=api_url + "messages",
         fields={
+            "password": "hardcoded password"
         }
     )
     return json.loads(r.data)

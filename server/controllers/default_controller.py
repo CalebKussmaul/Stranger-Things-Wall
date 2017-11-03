@@ -9,8 +9,9 @@ def display(message):
     return None, 204
 
 
-def messages():
-    global msgs
-    msg_jsn = jsonify(msgs)
-    msgs = []
-    return msg_jsn, 200
+def messages(password):
+    if password == "hardcoded password":
+        global msgs
+        msg_jsn = jsonify(msgs)
+        msgs = []
+        return msg_jsn, 200
