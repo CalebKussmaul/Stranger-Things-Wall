@@ -44,7 +44,6 @@ paths:
         type: "string"
       produces:
       - "application/json"
-      parameters: []
       responses:
         200:
           description: "JSON array of messages"
