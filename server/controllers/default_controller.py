@@ -1,16 +1,22 @@
-from flask import jsonify
+from flask import jsonify, render_template
+import settings
 
 msgs = []
+
+
+def index():
+    return render_template('index.html')
 
 
 def display(message):
     global msgs
     msgs.append(message)
+    print(message)
     return None, 204
 
 
 def messages(password):
-    if password == "hardcoded password":
+    if password == settings.password:
         global msgs
         msg_jsn = jsonify(msgs)
         msgs = []

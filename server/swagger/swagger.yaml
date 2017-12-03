@@ -1,14 +1,26 @@
 ---
 swagger: "2.0"
 info:
-  version: "1.0.0"
-  title: "Stranger Things Wall"
-host: "virtserver.swaggerhub.com"
-basePath: "/stranger_wall/1.0.0"
+  version: "2.0.0"
+  title: "Stranger Things Wall Server"
+
+# only used for testing
+host: "localhost:8080"
 schemes:
-- "https"
 - "http"
+basePath: "/stranger/"
 paths:
+  /:
+    get:
+      tags:
+      - "default"
+      summary: "HTML page to submit stuff"
+      operationId: "controllers.default_controller.index"
+      produces:
+      - "text/html; charset=utf-8"
+      responses:
+        200:
+          description: "index page"
   /display:
     post:
       tags:

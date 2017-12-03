@@ -1,0 +1,7 @@
+#First install rpi_ws281x from https://github.com/jgarff/rpi_ws281x
+#
+#Then run "pip2 install -r requirements.txt"
+#
+#Finally, enter your server IP and password in settings.py and run python2 stranger.py to start
+urllib3
+

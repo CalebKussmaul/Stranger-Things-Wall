@@ -1,8 +1,9 @@
 import urllib3
 import json
+import settings
 
 http = urllib3.PoolManager()
-api_url = "http://[your IP]:8080/stranger_wall/1.0.0/"
+api_url = "http://"+settings.server_ip+":"+str(settings.server_port)+"/stranger/"
 
 
 def get_messages():
@@ -12,7 +13,7 @@ def get_messages():
         method="POST",
         url=api_url + "messages",
         fields={
-            "password": "hardcoded password"
+            "password": settings.password
         }
     )
     return json.loads(r.data)

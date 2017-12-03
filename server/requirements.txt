@@ -1,4 +1,5 @@
+#Run "pip2 install -r requirements.txt"
+#
 flask
 connexion
 gevent
-urllib3
