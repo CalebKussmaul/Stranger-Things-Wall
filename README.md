@@ -13,7 +13,7 @@ This is set up to get around university wifi restrictions by hosting the server 
 #### You will need
 
 1. A second computer on a network that allows incoming traffic with python 2 installed
-2. Raspberry pi - any model should work, I'm using a B+
+2. Raspberry pi - any model should work
 3. [Wifi dongle](https://www.amazon.com/gp/product/B003MTTJOY) if model does not have wifi chip
 5. [5v Power supply](https://www.amazon.com/gp/product/B00MHV7576/) DO NOT POWER LEDs DIRECTLY FROM PI GPIO. CONNECT THEM BOTH TO THE POWER SUPPLY.
 6. Breadboard and jumper wires 
@@ -29,10 +29,11 @@ This is set up to get around university wifi restrictions by hosting the server 
 4. Enter "pip2 install -r server/requirements.txt"
 5. Enter password and server IP into settings/settings.py
 6. Enter "python2 -m server" to start the server
+7. Check that it is running by going to \[your IP]:8080/stranger in a browser
 
-#### Client (raspberry pi part) setup
+#### Client setup
 
-1. String wires on posterboard and paint letters corresponding to LEDs. There are 50 lights and 26 letters, so you will have to be somewhat creative. Use clear tape to point the LEDs to the letters
+1. String wires on posterboard and paint letters corresponding to LEDs. Use clear tape to point the LEDs to the letters. I suggest putting the input on the 'z' end if you want to put the pi below the board. 
 2. Install raspbian on pi
 3. Connect pi and ws2811 LED strip to external 5v power source in parallel (see wiring below)
 4. Connect LED data wire to the pi [GPIO 10](https://www.raspberrypi-spy.co.uk/wp-content/uploads/2012/06/Raspberry-Pi-GPIO-Layout-Model-B-Plus-rotated-2700x900.png) (actual pin number 19, I know it's confusing)
@@ -47,20 +48,20 @@ This is set up to get around university wifi restrictions by hosting the server 
 
 #### Static webhost workaround
 
-There is also an option to host the web form as a 3rd part. You might use this if you have a webhost that only allows static content, and you don't want to point your domain directly at your home IP. You will still need to have the server running elsewhere, and point the form action to that address. 
+There is also an option to host the web form separately. You might use this if you have a webhost that only allows static content, and you don't want to point your domain directly at your home IP. You will still need to have the server running somewhere, and point the form action to that address. 
 
-If you do not need this, simply point your domain to the server and the form will be accessible via http://yourdomain.com:8080/stranger. You may also want to change the port number in app.py to 80 instead of 8080. (this is not default since some consumer operating systems do not allow you to bind to that port). 
+If you do not need this, simply point your domain to the server and the form will be accessible via http://yourdomain.com/stranger. 
 
-You should now be up and running. Test it by entering a message in the terminal, or over the web by going to http://\[your pi's IP address\]:8080/stranger/
+#### Connecting it to the internet
 
-If you want to allow messages from the external internet, you will need to use your router port-forward incoming traffic to your external IP to the pi's internal IP.
+If you want to allow messages from the internet, you will need to use your router to port-forward incoming traffic to your external IP to the pi's internal IP on port 80.
 
-Note: technically the data wire takes 5v data, and the pi GPIO outputs on 3.3v. You may need to use [a level shifter](https://www.amazon.com/gp/product/B00XW2L39K/) however it works fine without it for me.
+Note: technically the data wire takes 5v data, and the pi GPIO outputs on 3.3v. You may need to use [a level shifter](https://www.amazon.com/gp/product/B00XW2L39K/) however it seems to work fine without it for me.
 
 #### Wiring:
 
-![Wiring](https://raw.githubusercontent.com/CalebKussmaul/Stranger-Things-Integrated/master/wall%20with%20level%20shifter.png)
+![Wiring](https://i.imgur.com/Cjj0dxo.png)
 
 but you can probably get away with this:
 
-![Wiring without level shifter](https://github.com/CalebKussmaul/Stranger-Things-Integrated/raw/master/wall%20without%20level%20shifter.png)
+![Wiring without level shifter](https://i.imgur.com/Vnqq14C.png)
