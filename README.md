@@ -25,10 +25,10 @@ This is set up to get around university wifi restrictions by hosting the server 
 
 1. Open terminal
 2. Enter "git clone 'https://github.com/CalebKussmaul/Stranger-Things-Wall.git'"
-3. Enter "cd Stranger-Things-Wall/server"
-4. Enter "pip2 install -r requirements.txt"
-5. Enter password and server IP into settings.py
-6. Enter "python2 app.py" to start the client
+3. Enter "cd Stranger-Things-Wall"
+4. Enter "pip2 install -r server/requirements.txt"
+5. Enter password and server IP into settings/settings.py
+6. Enter "python2 -m server" to start the server
 
 #### Client (raspberry pi part) setup
 
@@ -40,9 +40,9 @@ This is set up to get around university wifi restrictions by hosting the server 
 6. Open terminal
 7. Enter "git clone 'https://github.com/CalebKussmaul/Stranger-Things-Wall.git'"
 8. Enter "cd Stranger-Things-Wall/client"
-9. Enter "pip2 install -r requirements.txt"
+9. Enter "pip2 install -r client/requirements.txt"
 10. Copy settings.py from server, and in stranger.py and adjust character mapping to LEDs as necessary
-11. Enter "python2 stranger.py" to start the client
+11. Enter "python2 -m client" to start the client
 
 
 #### Static webhost workaround

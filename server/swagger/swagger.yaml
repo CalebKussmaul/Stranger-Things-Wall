@@ -15,7 +15,7 @@ paths:
       tags:
       - "default"
       summary: "HTML page to submit stuff"
-      operationId: "controllers.default_controller.index"
+      operationId: "server.controllers.default_controller.index"
       produces:
       - "text/html; charset=utf-8"
       responses:
@@ -26,7 +26,7 @@ paths:
       tags:
       - "default"
       summary: "Display message on stranger things board"
-      operationId: "controllers.default_controller.display"
+      operationId: "server.controllers.default_controller.display"
       consumes:
       - "multipart/form-data"
       parameters:
@@ -45,7 +45,7 @@ paths:
       tags:
       - "default"
       summary: "Poll for new messages, clear list"
-      operationId: "controllers.default_controller.messages"
+      operationId: "server.controllers.default_controller.messages"
       consumes:
       - "multipart/form-data"
       parameters:
