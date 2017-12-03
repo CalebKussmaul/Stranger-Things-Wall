@@ -1,5 +1,5 @@
 from flask import jsonify, render_template
-import settings
+from settings import settings
 
 msgs = []
 

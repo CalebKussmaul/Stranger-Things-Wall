@@ -1,6 +1,6 @@
 import urllib3
 import json
-import settings
+from settings import settings
 
 http = urllib3.PoolManager()
 api_url = "http://"+settings.server_ip+":"+str(settings.server_port)+"/stranger/"

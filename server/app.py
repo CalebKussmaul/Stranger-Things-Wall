@@ -1,8 +1,8 @@
 #!/usr/bin/env python2
 
 import connexion
-import settings
 from gevent.wsgi import WSGIServer
+from settings import settings
 
 if __name__ == '__main__':
     app = connexion.App(__name__, specification_dir='./swagger/')
