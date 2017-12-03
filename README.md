@@ -55,12 +55,12 @@ You should now be up and running. Test it by entering a message in the terminal,
 
 If you want to allow messages from the external internet, you will need to use your router port-forward incoming traffic to your external IP to the pi's internal IP.
 
-Note: technically the data wire takes 5v data, and the pi GPIO outputs on 3.3v. You may need to use [a level shifter](https://www.amazon.com/gp/product/B00XW2L39K/ref=oh_aui_detailpage_o00_s00?ie=UTF8&psc=1) however it works fine without it for me.
+Note: technically the data wire takes 5v data, and the pi GPIO outputs on 3.3v. You may need to use [a level shifter](https://www.amazon.com/gp/product/B00XW2L39K/) however it works fine without it for me.
 
 #### Wiring:
 
-![Wiring](wall%20with%20level%20shifter.png)
+![Wiring](https://raw.githubusercontent.com/CalebKussmaul/Stranger-Things-Integrated/master/wall%20with%20level%20shifter.png)
 
 but you can probably get away with this:
 
-![Wiring without level shifter](wall%20without%20level%20shifter.png)
+![Wiring without level shifter](https://github.com/CalebKussmaul/Stranger-Things-Integrated/raw/master/wall%20without%20level%20shifter.png)
