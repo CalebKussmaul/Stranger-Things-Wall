@@ -135,8 +135,8 @@ def listen_on_client():
                 for msg in msgs:
                     print msg
                     record(msg)
-                    if not re.search(r"([a-zA-Z])\1+", msg):
-                        display(msg[:50])
+#                    if not re.search(r"([a-zA-Z])\1+", msg): # uncomment this for basic spam prevention
+                    display(msg[:50])
             except:
                 print "network error"
         time.sleep(2)
