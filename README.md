@@ -2,7 +2,7 @@
 
 This is set up to get around university wifi restrictions by hosting the server separately. 
 
-**If you want to run everything on the Pi, [use this repo instead](https://github.com/CalebKussmaul/Stranger-Things-Integrated)**
+**[If you want to run everything on the Pi, use this repo instead](https://github.com/CalebKussmaul/Stranger-Things-Integrated)**
 
 #### In this GIT repo 
 
@@ -13,13 +13,13 @@ This is set up to get around university wifi restrictions by hosting the server 
 #### You will need
 
 1. A second computer on a network that allows incoming traffic with python 2 installed
-2. Raspberry pi - any model should work
-3. [Wifi dongle](https://www.amazon.com/gp/product/B003MTTJOY) if model does not have wifi chip
-5. [5v Power supply](https://www.amazon.com/gp/product/B00MHV7576/) DO NOT POWER LEDs DIRECTLY FROM PI GPIO. CONNECT THEM BOTH TO THE POWER SUPPLY.
-6. Breadboard and jumper wires 
-7. [Level shifter](https://www.amazon.com/gp/product/B00XW2L39K/) (Reccomended)
-8. [WS2811 LEDs](https://www.amazon.com/gp/product/B01AG923GI/)
-9. 3' x 4' posterboard, paint, command strips, clear tape
+2. Raspberry pi - any model should work. [Zero W](https://www.adafruit.com/product/3400) + [GPIO header & adapters](https://www.amazon.com/dp/B075K7MG3F/) + [NOOBs](https://www.amazon.com/dp/B017JKJEAU) will be cheapest.
+3. [Wifi dongle](https://www.amazon.com/gp/product/B003MTTJOY) if the pi does not have wifi chip
+4. [5v Power supply](https://www.amazon.com/gp/product/B00MHV7576/) - DO NOT POWER LEDs DIRECTLY FROM THE PI
+5. Breadboard and jumper wires (male/male and male/female)
+6. [Level shifter](https://www.amazon.com/gp/product/B00XW2L39K/) (Reccomended, seems to work without it)
+7. [WS2811 LEDs](https://www.amazon.com/gp/product/B01AG923GI/)
+8. 3' x 4' posterboard, paint, command strips, clear tape
 
 #### Server setup
 
@@ -37,13 +37,14 @@ This is set up to get around university wifi restrictions by hosting the server 
 2. Install raspbian on pi
 3. Connect pi and ws2811 LED strip to external 5v power source in parallel (see wiring below)
 4. Connect LED data wire to the pi [GPIO 10](https://www.raspberrypi-spy.co.uk/wp-content/uploads/2012/06/Raspberry-Pi-GPIO-Layout-Model-B-Plus-rotated-2700x900.png) (actual pin number 19, I know it's confusing)
-5. Install [rpi_ws281x library](https://github.com/jgarff/rpi_ws281x) (remember to disable sound card)
-6. Open terminal
-7. Enter "git clone 'https://github.com/CalebKussmaul/Stranger-Things-Wall.git'"
-8. Enter "cd Stranger-Things-Wall/client"
-9. Enter "pip2 install -r client/requirements.txt"
-10. Copy settings.py from server, and in stranger.py and adjust character mapping to LEDs as necessary
-11. Enter "python2 -m client" to start the client
+5. Install [rpi_ws281x library](https://github.com/jgarff/rpi_ws281x). Follow the special instructions for SPI if you're using a Pi 3.
+6. From the ws2811 repo, install the [included python wrapper](https://github.com/jgarff/rpi_ws281x/tree/master/python) (run setup.py 'install' instead of 'build'). 
+7. Open terminal
+8. Enter "git clone 'https://github.com/CalebKussmaul/Stranger-Things-Wall.git'"
+9. Enter "cd Stranger-Things-Wall/client"
+10. Enter "pip2 install -r client/requirements.txt"
+11. Copy settings.py from server, and in stranger.py and adjust character mapping to LEDs as necessary
+12. Enter "python2 -m client" to start the client
 
 
 #### Static webhost workaround
